@@ -2,7 +2,8 @@ name: Despliegue de Blazor PWA
 
 on:
   push:
-    branches: [ master ] # Se ejecuta cada vez que subes algo a main
+    branches: [ main, master ]  # Cubrimos ambas posibilidades
+  workflow_dispatch:            # <--- ESTO permite lanzar la acción manualmente
 
 jobs:
   deploy-to-github-pages:
