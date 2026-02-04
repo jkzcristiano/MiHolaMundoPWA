@@ -1,13 +1,13 @@
 self.assetsManifest = {
-  "version": "N9R4G0+A",
+  "version": "hQgBXMLd",
   "assets": [
     {
       "hash": "sha256-HzrOcWeE5KWVGm3TMzt7PDKlRMSi42o9ubQRfNvW/lo=",
       "url": "MiHolaMundoPWA.styles.css"
     },
     {
-      "hash": "sha256-3cfBDKyWs3o88NHplQEoqQBNaovLTmigQ0gHFDpb9IQ=",
-      "url": "_framework/MiHolaMundoPWA.lmvfufsxen.wasm"
+      "hash": "sha256-ZQoi2mUo+CJSYtoUqDKouXDHMFGj+Tkd2rw0SSsOpFQ=",
+      "url": "_framework/MiHolaMundoPWA.pzmgqm4yd5.wasm"
     },
     {
       "hash": "sha256-Wow92XrctX9ATGksbBy69cxvhHgekdo/RmRfhUZUYIQ=",
@@ -162,8 +162,8 @@ self.assetsManifest = {
       "url": "_framework/dotnet.runtime.2tx45g8lli.js"
     },
     {
-      "hash": "sha256-exQkT0dmQRcsOexncaGzI3YKTsGr0OVKgczgzGIK35c=",
-      "url": "_framework/dotnet.z2h45wc27h.js"
+      "hash": "sha256-PVAxthV7chaC94MnD3x9QvO6tPbPxp8GGEW8Q0C4KhE=",
+      "url": "_framework/dotnet.zcbpu7x55p.js"
     },
     {
       "hash": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -194,7 +194,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-678v8egPLNWQ9D+n0Ik0s36NWeWWJspCLXSrhkJa2+w=",
+      "hash": "sha256-icIpQnVyyWtCWgMvT5W2jwaSeaIiWodxb6dolXVAmh0=",
       "url": "index.html"
     },
     {
