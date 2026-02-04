@@ -2,8 +2,12 @@ name: Despliegue de Blazor PWA
 
 on:
   push:
-    branches: [ main, master ]  # Cubrimos ambas posibilidades
-  workflow_dispatch:            # <--- ESTO permite lanzar la acción manualmente
+    branches: [ main, master ]
+  workflow_dispatch:
+
+# ESTO SOLUCIONA EL ERROR 128
+permissions:
+  contents: write
 
 jobs:
   deploy-to-github-pages:
@@ -17,13 +21,14 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Publicar aplicación
-        run: dotnet publish -c Release -o release
+        # AQUÍ CAMBIAMOS EL COMANDO PARA APUNTAR AL PROYECTO
+        # Reemplaza 'NombreDeTuCarpeta' por el nombre de la carpeta de tu código
+        run: dotnet publish NombreDeTuCarpeta/*.csproj -c Release -o release
 
-      # Paso crítico: Cambiar el base-href para GitHub Pages
       - name: Cambiar base-href
-        run: sed -i 's/<base href="\/" \/>/<base href="\/MiHolaMundoPWA\/" \/>/g' release/wwwroot/index.html
+        # Reemplaza 'NombreDeTuRepo' por el nombre de tu repositorio en GitHub
+        run: sed -i 's/<base href="\/" \/>/<base href="\/NombreDeTuRepo\/" \/>/g' release/wwwroot/index.html
 
-      # Evitar que GitHub intente procesar con Jekyll
       - name: Añadir .nojekyll
         run: touch release/wwwroot/.nojekyll
 
