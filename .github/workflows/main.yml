@@ -5,7 +5,6 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
-# ESTO SOLUCIONA EL ERROR 128
 permissions:
   contents: write
 
@@ -21,13 +20,14 @@ jobs:
           dotnet-version: '10.0.x'
 
       - name: Publicar aplicación
-        # AQUÍ CAMBIAMOS EL COMANDO PARA APUNTAR AL PROYECTO
-        # Reemplaza 'NombreDeTuCarpeta' por el nombre de la carpeta de tu código
-        run: dotnet publish MiHolaMundoPWA/*.csproj -c Release -o release
+        # Usamos **/*.csproj para que encuentre el proyecto esté donde esté
+        run: dotnet publish **/*.csproj -c Release -o release
 
       - name: Cambiar base-href
-        # Reemplaza 'NombreDeTuRepo' por el nombre de tu repositorio en GitHub
-        run: sed -i 's/<base href="\/" \/>/<base href="\/MiHolaMundoPWA\/" \/>/g' release/wwwroot/index.html
+        # Este comando busca el nombre del repo automáticamente por ti
+        run: |
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d '/' -f 2)
+          sed -i "s/<base href=\"\/\" \/>/<base href=\"\/$REPO_NAME\/\" \/>/g" release/wwwroot/index.html
 
       - name: Añadir .nojekyll
         run: touch release/wwwroot/.nojekyll
