@@ -23,11 +23,11 @@ jobs:
       - name: Publicar aplicación
         # AQUÍ CAMBIAMOS EL COMANDO PARA APUNTAR AL PROYECTO
         # Reemplaza 'NombreDeTuCarpeta' por el nombre de la carpeta de tu código
-        run: dotnet publish NombreDeTuCarpeta/*.csproj -c Release -o release
+        run: dotnet publish MiHolaMundoPWA/*.csproj -c Release -o release
 
       - name: Cambiar base-href
         # Reemplaza 'NombreDeTuRepo' por el nombre de tu repositorio en GitHub
-        run: sed -i 's/<base href="\/" \/>/<base href="\/NombreDeTuRepo\/" \/>/g' release/wwwroot/index.html
+        run: sed -i 's/<base href="\/" \/>/<base href="\/MiHolaMundoPWA\/" \/>/g' release/wwwroot/index.html
 
       - name: Añadir .nojekyll
         run: touch release/wwwroot/.nojekyll
